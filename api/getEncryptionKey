@@ -1,1 +1,29 @@
+// api/getEncryptionKey.js
 
+/**
+ * This API route returns the encryption key and IV
+ * securely stored in Vercel's environment variables.
+ * 
+ * In production, this function ensures that the encryption key
+ * is never exposed in the client-side code.
+ */
+
+export default function handler(req, res) {
+    // Retrieve the encryption key and IV from environment variables.
+    // These should be set in your Vercel project settings.
+    const encryptionKey = process.env.ENCRYPTION_KEY;
+    const encryptionIV = process.env.ENCRYPTION_IV;
+  
+    // If the variables are missing, return a 500 error.
+    if (!encryptionKey || !encryptionIV) {
+      return res.status(500).json({ error: "Encryption key not configured." });
+    }
+  
+    // Return the key and IV as JSON.
+    // They should be stored as valid JSON strings (e.g., "[12,34,56,...]") in the Vercel dashboard.
+    res.status(200).json({
+      key: JSON.parse(encryptionKey),
+      iv: JSON.parse(encryptionIV)
+    });
+  }
+  
