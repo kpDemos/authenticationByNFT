@@ -1,0 +1,68 @@
+/* Reset defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Import fonts for a futuristic and indie vibe */
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Raleway:wght@400;700&display=swap');
+  
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(135deg, #222222, #463730);
+    color: #F9F6DE;
+    text-align: center;
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(249, 246, 222, 0.3);
+  }
+  
+  button {
+    background: linear-gradient(45deg, #AFB780, #688D6D);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #F9F6DE;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(175, 183, 128, 0.4);
+  }
+  
+  #message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #AFB780;
+  }
+
+  video {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+  }
+
+
+  
