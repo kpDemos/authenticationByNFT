@@ -1,6 +1,6 @@
 const button = document.getElementById('connectWalletButton');
 const message = document.getElementById('message');
-const CID = "bafybeihxrk3wabligbejuvuhgyvxn7n2z6qjjmu72zv7ode4ldw3vwhnla"
+const CID = ""  // add the CID from IPFS
 
 const VIDEO_URL = `/api/ipfsProxy?cid=${CID}`;
 
@@ -47,11 +47,11 @@ async function checkNFTAndDisplayMessage(walletAddress) {
 
 async function checkIfUserHasNFT(walletAddress) {
     try {
-        const connection = new window.solanaWeb3.Connection("https://fittest-necessary-ensemble.solana-mainnet.quiknode.pro/9818075a84f61c8db5bc71d077bbcd4e85d676af/");
+        const connection = new window.solanaWeb3.Connection("");  // add your own URL from Quicknode
         const ownerPublicKey = new window.solanaWeb3.PublicKey(walletAddress);
-        const nftMintAddress = new window.solanaWeb3.PublicKey("Fq6bMazX8ZaBNxDhHpeQtBzUMG11mhw4A7zj3MvnUqvb");
+        const nftMintAddress = new window.solanaWeb3.PublicKey("");  //add the address of the specific NFT you want to be needed for authentication
         const tokenAccounts = await connection.getParsedTokenAccountsByOwner(ownerPublicKey, {
-            programId: new window.solanaWeb3.PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA")
+            programId: new window.solanaWeb3.PublicKey("")  //add the program ID
         });
 
         return tokenAccounts.value.some(account => {
@@ -66,6 +66,7 @@ async function checkIfUserHasNFT(walletAddress) {
         return false;
     }   
 }
+
 
 // --- Function for Part 4 ---
 // This function fetches the encrypted video from IPFS, decrypts it using the AES key and IV,
